@@ -8,30 +8,103 @@
 
 import UIKit
 import CoreData
-
+import IQKeyboardManagerSwift
+import MOLH
+import FirebaseAuth
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate ,MOLHResetable,UNUserNotificationCenterDelegate ,MessagingDelegate{
+    var window: UIWindow?
+    let is_login = UserDefaults.standard.bool(forKey: "is_login")
+    // For iOS 9+
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        if Auth.auth().canHandle(url) {
+            return true
+        }
+        return false
+        // URL not auth related, developer should handle it.
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        MOLHLanguage.setDefaultLanguage("en")
+        MOLH.shared.activate(true)
+        MOLH.shared.specialKeyWords = ["Cancel","Done"]
+    
+        IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound,.alert,.announcement]) { (granted, error) in
+        DispatchQueue.main.async {UIApplication.shared.registerForRemoteNotifications()}}
+        application.beginBackgroundTask(withName: "showNotification", expirationHandler: nil)
+
+        //self.splashScreen()
         return true
     }
+    private func splashScreen(){
+        let lanuchScreenVC = UIStoryboard(name: "LaunchScreen", bundle: nil)
+        if #available(iOS 13.0, *) {
+            let rootVC = lanuchScreenVC.instantiateViewController(identifier: "splashscreenController")
+            self.window?.rootViewController = rootVC
+            self.window?.makeKeyAndVisible()
+            Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissSplashController), userInfo: nil, repeats: false)
+            
+        }
+    }
+    @objc func dismissSplashController(){
+        if is_login{
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "homeID")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()
+            
+        }else{
+            let mainVC = UIStoryboard.init(name: "Main", bundle: nil)
+            if #available(iOS 13.0, *) {
+                let rootVC = mainVC.instantiateViewController(identifier: "startId")
+                self.window?.rootViewController = rootVC
+                self.window?.makeKeyAndVisible()
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
+    }
+    
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+      
+    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+  
+        
+    }
+   
+    //print userInfo when app is  in foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+ 
+        completionHandler([UNNotificationPresentationOptions.alert,UNNotificationPresentationOptions.sound])
+        
+    }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
 
-    // MARK: UISceneSession Lifecycle
+        
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        completionHandler()
+    }
+    func reset() {
+        let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+        let stry = UIStoryboard(name: "Main", bundle: nil)
+        rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "homeID")
     }
 
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
+ 
 
     // MARK: - Core Data stack
 

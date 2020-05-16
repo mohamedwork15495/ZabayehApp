@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>365034763250-b6iegg935dnnkb442udh58j3hck3vlpm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.365034763250-b6iegg935dnnkb442udh58j3hck3vlpm</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>365034763250-ou3f5vk5n2vndeofdfcvb3g4ip0ne5vg.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB2DchOMnh2HwBnPTzcaaZa1U7CjJurN1s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>365034763250</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.endPoint.Zabayeh</string>
+	<key>PROJECT_ID</key>
+	<string>zapyhkoom</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zapyhkoom.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:365034763250:ios:70e164e4933eb8cf76716b</string>
+	<key>DATABASE_URL</key>
+	<string>https://zapyhkoom.firebaseio.com</string>
+</dict>
+</plist>
