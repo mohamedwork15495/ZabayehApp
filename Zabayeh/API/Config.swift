@@ -9,3 +9,8 @@
 import Foundation
 let mainURL = "http://zbayeh.com/"
 let sliderURL = mainURL + "api/slider"
+let imageURL = mainURL + "public/uploads/"
+let categoriesURL = mainURL + "api/categories"
+let productsURL = mainURL + "api/products"
+let offersURL = mainURL + "api/offers"
+let subOffersURL = mainURL + "api/offer"
