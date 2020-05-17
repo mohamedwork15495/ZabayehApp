@@ -18,6 +18,7 @@ class SubCatVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     var products = [JSON]()
     var category_id = 0
     var txt = ""
+    var product:JSON!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = txt
@@ -44,6 +45,16 @@ class SubCatVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
         cell.titleLB.text = item["name"].stringValue
         return cell
       }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        product = products[indexPath.row]
+        performSegue(withIdentifier: "proDetailsSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "proDetailsSegue" {
+            let des = segue.destination as! ProductDetailsVC
+            des.product = product
+        }
+    }
     func getproducts(){
            SVProgressHUD.show()
         Helper_API().getproducts(category_id: category_id) { (code, result) in

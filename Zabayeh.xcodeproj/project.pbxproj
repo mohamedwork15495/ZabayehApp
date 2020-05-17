@@ -35,6 +35,7 @@
 		053DF01C246964210076FB71 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053DF01B246964210076FB71 /* LoginVC.swift */; };
 		053DF020246965F60076FB71 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 053DF022246965F60076FB71 /* Localizable.strings */; };
 		053DF025246975E00076FB71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 053DF024246975DF0076FB71 /* GoogleService-Info.plist */; };
+		0548126824715527008D024A /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548126724715527008D024A /* ProductDetailsVC.swift */; };
 		05620F6424683F3400DFD368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05620F6324683F3400DFD368 /* AppDelegate.swift */; };
 		05620F6B24683F3400DFD368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05620F6924683F3400DFD368 /* Main.storyboard */; };
 		05620F6E24683F3400DFD368 /* Zabayeh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05620F6C24683F3400DFD368 /* Zabayeh.xcdatamodeld */; };
@@ -83,6 +84,7 @@
 		053DF021246965F60076FB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		053DF023246965FA0076FB71 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		053DF024246975DF0076FB71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0548126724715527008D024A /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		05620F6024683F3400DFD368 /* Zabayeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zabayeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05620F6324683F3400DFD368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05620F6A24683F3400DFD368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		053DEFED24694CBD0076FB71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				05481266247154D4008D024A /* Product */,
 				05B253082470AD1F0021E7D2 /* Offers */,
 				052518172470351600ECFF2D /* Home */,
 				053DF01A246964100076FB71 /* Auth */,
@@ -222,6 +225,14 @@
 				053DF01B246964210076FB71 /* LoginVC.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		05481266247154D4008D024A /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				0548126724715527008D024A /* ProductDetailsVC.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		05620F5724683F3400DFD368 = {
@@ -462,6 +473,7 @@
 				053DF0072469614B0076FB71 /* UITextView.swift in Sources */,
 				05620F6E24683F3400DFD368 /* Zabayeh.xcdatamodeld in Sources */,
 				05B25304247096380021E7D2 /* SubCatCell.swift in Sources */,
+				0548126824715527008D024A /* ProductDetailsVC.swift in Sources */,
 				053DF017246961AB0076FB71 /* ImagePicker.swift in Sources */,
 				053DF0002469614B0076FB71 /* Uicolor.swift in Sources */,
 				053DF0042469614B0076FB71 /* String.swift in Sources */,
