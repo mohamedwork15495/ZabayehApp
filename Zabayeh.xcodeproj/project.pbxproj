@@ -50,6 +50,12 @@
 		05B2530E2470AD940021E7D2 /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B2530C2470AD940021E7D2 /* OffersCell.swift */; };
 		05B2530F2470AD940021E7D2 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B2530D2470AD940021E7D2 /* OffersCell.xib */; };
 		05B253112470B64F0021E7D2 /* SubOffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B253102470B64F0021E7D2 /* SubOffersVC.swift */; };
+		05B7316124768362009C6D6E /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7316024768362009C6D6E /* RegisterVC.swift */; };
+		05C4AA3024729A0600C1CB16 /* CompletePurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C4AA2F24729A0600C1CB16 /* CompletePurchaseVC.swift */; };
+		05F411712475170D0013876C /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4116F2475170D0013876C /* CartCell.swift */; };
+		05F411722475170D0013876C /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F411702475170D0013876C /* CartCell.xib */; };
+		05F4117524751E650013876C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4117424751E650013876C /* CartVC.swift */; };
+		05F4117724754FE10013876C /* Auth_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4117624754FE10013876C /* Auth_API.swift */; };
 		180E4B5E205F9F57FC820BB4 /* Pods_Zabayeh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBBEB8AFB87B65E90D6C37B /* Pods_Zabayeh.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +107,12 @@
 		05B2530C2470AD940021E7D2 /* OffersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
 		05B2530D2470AD940021E7D2 /* OffersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffersCell.xib; sourceTree = "<group>"; };
 		05B253102470B64F0021E7D2 /* SubOffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubOffersVC.swift; sourceTree = "<group>"; };
+		05B7316024768362009C6D6E /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		05C4AA2F24729A0600C1CB16 /* CompletePurchaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePurchaseVC.swift; sourceTree = "<group>"; };
+		05F4116F2475170D0013876C /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		05F411702475170D0013876C /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		05F4117424751E650013876C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		05F4117624754FE10013876C /* Auth_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth_API.swift; sourceTree = "<group>"; };
 		1BD0857F965EE263786EEA40 /* Pods-Zabayeh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zabayeh.debug.xcconfig"; path = "Target Support Files/Pods-Zabayeh/Pods-Zabayeh.debug.xcconfig"; sourceTree = "<group>"; };
 		4DBBEB8AFB87B65E90D6C37B /* Pods_Zabayeh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zabayeh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A2B107F3836F18161D574A /* Pods-Zabayeh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zabayeh.release.xcconfig"; path = "Target Support Files/Pods-Zabayeh/Pods-Zabayeh.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		053DEFED24694CBD0076FB71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				05F4117324751E4D0013876C /* Cart */,
 				05481266247154D4008D024A /* Product */,
 				05B253082470AD1F0021E7D2 /* Offers */,
 				052518172470351600ECFF2D /* Home */,
@@ -150,6 +163,7 @@
 		053DEFEE24694CC50076FB71 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				05F4116E247516F30013876C /* CartCell */,
 				05B2530B2470AD810021E7D2 /* OffersCell */,
 				05B25301247096220021E7D2 /* SubCatCell */,
 				05B252FC247091900021E7D2 /* CategoryCell */,
@@ -165,6 +179,7 @@
 			children = (
 				0525181A2470361E00ECFF2D /* Helper_API.swift */,
 				0525181C2470366000ECFF2D /* Config.swift */,
+				05F4117624754FE10013876C /* Auth_API.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -223,6 +238,7 @@
 				052518152470166E00ECFF2D /* VerificationCodeVC.swift */,
 				052518102470161D00ECFF2D /* OTP */,
 				053DF01B246964210076FB71 /* LoginVC.swift */,
+				05B7316024768362009C6D6E /* RegisterVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -231,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				0548126724715527008D024A /* ProductDetailsVC.swift */,
+				05C4AA2F24729A0600C1CB16 /* CompletePurchaseVC.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -305,6 +322,23 @@
 				05B2530D2470AD940021E7D2 /* OffersCell.xib */,
 			);
 			path = OffersCell;
+			sourceTree = "<group>";
+		};
+		05F4116E247516F30013876C /* CartCell */ = {
+			isa = PBXGroup;
+			children = (
+				05F4116F2475170D0013876C /* CartCell.swift */,
+				05F411702475170D0013876C /* CartCell.xib */,
+			);
+			path = CartCell;
+			sourceTree = "<group>";
+		};
+		05F4117324751E4D0013876C /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				05F4117424751E650013876C /* CartVC.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		6FD757CA219F90F6FC7FBE35 /* Frameworks */ = {
@@ -386,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F411722475170D0013876C /* CartCell.xib in Resources */,
 				05620F7324683F3600DFD368 /* LaunchScreen.storyboard in Resources */,
 				053DF020246965F60076FB71 /* Localizable.strings in Resources */,
 				053DF00B2469618A0076FB71 /* Cairo-Bold.ttf in Resources */,
@@ -466,17 +501,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				053DEFFE2469614B0076FB71 /* Array.swift in Sources */,
+				05F411712475170D0013876C /* CartCell.swift in Sources */,
 				053DF019246961AB0076FB71 /* TimeHelper.swift in Sources */,
+				05C4AA3024729A0600C1CB16 /* CompletePurchaseVC.swift in Sources */,
 				053DF018246961AB0076FB71 /* CheckInternet.swift in Sources */,
 				05B2530E2470AD940021E7D2 /* OffersCell.swift in Sources */,
 				05B25307247098AD0021E7D2 /* SubCatVC.swift in Sources */,
 				053DF0072469614B0076FB71 /* UITextView.swift in Sources */,
+				05F4117724754FE10013876C /* Auth_API.swift in Sources */,
 				05620F6E24683F3400DFD368 /* Zabayeh.xcdatamodeld in Sources */,
 				05B25304247096380021E7D2 /* SubCatCell.swift in Sources */,
 				0548126824715527008D024A /* ProductDetailsVC.swift in Sources */,
 				053DF017246961AB0076FB71 /* ImagePicker.swift in Sources */,
 				053DF0002469614B0076FB71 /* Uicolor.swift in Sources */,
 				053DF0042469614B0076FB71 /* String.swift in Sources */,
+				05F4117524751E650013876C /* CartVC.swift in Sources */,
 				052518132470163600ECFF2D /* OTPTextField.swift in Sources */,
 				052518192470352B00ECFF2D /* HomeVC.swift in Sources */,
 				05620F6424683F3400DFD368 /* AppDelegate.swift in Sources */,
@@ -490,6 +529,7 @@
 				053DF01C246964210076FB71 /* LoginVC.swift in Sources */,
 				052518162470166E00ECFF2D /* VerificationCodeVC.swift in Sources */,
 				053DF0062469614B0076FB71 /* Extensions.swift in Sources */,
+				05B7316124768362009C6D6E /* RegisterVC.swift in Sources */,
 				0525181D2470366000ECFF2D /* Config.swift in Sources */,
 				053DF016246961AB0076FB71 /* LoginAlert.swift in Sources */,
 				053DEFFF2469614B0076FB71 /* UitextField.swift in Sources */,

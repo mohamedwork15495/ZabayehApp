@@ -9,3 +9,21 @@
 "Packagingdish" = "Packaging Dish";
 "Packagingbags" = "Packaging Bags";
 "Requestsacrificecookedsoggy" = "Request sacrifice cooked soggy";
+//chipping
+"FridgeShredder" = "Fridge Shredder";
+"Hadramicutting" = "Hadrami Cutting";
+"Cutuplists" = "Cut Up Lists";
+"Flatcutting" = "Flat Cutting";
+"enterOrderDetails" = "Enter order details";
+"productAddedToCart" = "Product Added To Cart";
+"selectAddressOnMap" = "Select Address On Map";
+"enterValidPhoneNumber" = "Enter Valid Phone Number";
+"enterPhoneNumber" = "Enter Phone Number";
+"enterphonenumberAndSelectAddressOnMap" = "Enter Phone Number And Select Address On Map";
+"tryAgainLater" = "Try again later";
+"enterAllData" = "Enter All data";
+"enterName" = "Enter name";
+"enterPassword" = "Enter Password";
+"enterStrongPassword" = "Enter strong password";
+
+

@@ -15,6 +15,7 @@ class VerificationCodeVC: UIViewController ,OTPDelegate{
     var phone_code = ""
     var phone = ""
     var codePhone = ""
+    var status_code = 0
     let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
     
     @IBOutlet weak var otpContainerView: UIView!
@@ -24,22 +25,24 @@ class VerificationCodeVC: UIViewController ,OTPDelegate{
     //let user_id = UserDefaults.standard.integer(forKey: "id")
     var timer:Timer?
     var startTime = 60.0
+    let otpStackView = OTPStackView()
     override func viewWillAppear(_ animated: Bool) {
         // testButton.isHidden = true
+        
         otpContainerView.addSubview(otpStackView)
         otpStackView.delegate = self
+        otpStackView.semanticContentAttribute = .forceLeftToRight
         otpStackView.heightAnchor.constraint(equalTo: otpContainerView.heightAnchor).isActive = true
         otpStackView.centerXAnchor.constraint(equalTo: otpContainerView.centerXAnchor).isActive = true
         otpStackView.centerYAnchor.constraint(equalTo: otpContainerView.centerYAnchor).isActive = true
         timeButton.roundCorners(cornerRadius: 20.0)
         checkButton.roundCorners(cornerRadius: 20.0)
         timeButton.isUserInteractionEnabled = false
-
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
         
     }
 
-    let otpStackView = OTPStackView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +57,7 @@ class VerificationCodeVC: UIViewController ,OTPDelegate{
         timeButton.isUserInteractionEnabled = false
         
         startTime -= 1.0
-        timeButton.setTitle("00:\(startTime)", for: .normal)
+        timeButton.setTitle("00:\(Int(startTime))", for: .normal)
        // print(startTime)
         if startTime <= 0.0  {
             
@@ -87,14 +90,14 @@ class VerificationCodeVC: UIViewController ,OTPDelegate{
                     return
                 }
                 SVProgressHUD.dismiss()
-                if UserDefaults.standard.integer(forKey: "LoginCode") == 200{
+                if self.status_code == 200{
                     UserDefaults.standard.set(true, forKey: "is_login")
                     let vc = UIStoryboard(name: "Main", bundle: nil)
                     let rootVc = vc.instantiateViewController(withIdentifier: "homeID")
                     self.present(rootVc, animated: true, completion: nil)
                 }else{
                     self.performSegue(withIdentifier: "registerSegue", sender: self)
-                    print("success to register")
+                    print("register")
                 }
                 
             }

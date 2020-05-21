@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Regular.ttf">
+            <string>Cairo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCell" rowHeight="146" id="KGk-i7-Jjw" customClass="CartCell" customModule="Zabayeh" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="146"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="146"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFD-Sx-M9S">
+                        <rect key="frame" x="5" y="5" width="310" height="136"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-mG-2LV">
+                                <rect key="frame" x="270" y="5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ApI-re-JK7"/>
+                                    <constraint firstAttribute="width" constant="35" id="rZF-lX-qEC"/>
+                                </constraints>
+                                <state key="normal" image="delete"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XdA-9H-QLB">
+                                <rect key="frame" x="10" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="erW-o4-6qq"/>
+                                    <constraint firstAttribute="width" constant="100" id="xgk-WV-tOC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4d-mK-xKW">
+                                <rect key="frame" x="115" y="45" width="190" height="28.5"/>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3c-QV-net">
+                                <rect key="frame" x="115" y="78.5" width="30.5" height="28.5"/>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLI-FL-62Y">
+                                <rect key="frame" x="269" y="102.5" width="36" height="28.5"/>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D4d-mK-xKW" firstAttribute="top" secondItem="GFD-Sx-M9S" secondAttribute="top" constant="45" id="3A7-E9-bqC"/>
+                            <constraint firstItem="u3c-QV-net" firstAttribute="leading" secondItem="XdA-9H-QLB" secondAttribute="trailing" constant="5" id="3yO-ga-ibZ"/>
+                            <constraint firstItem="XdA-9H-QLB" firstAttribute="top" secondItem="GFD-Sx-M9S" secondAttribute="top" constant="20" id="Fyv-ZT-7hp"/>
+                            <constraint firstItem="u3c-QV-net" firstAttribute="top" secondItem="D4d-mK-xKW" secondAttribute="bottom" constant="5" id="HwI-8n-ZKD"/>
+                            <constraint firstItem="XdA-9H-QLB" firstAttribute="leading" secondItem="GFD-Sx-M9S" secondAttribute="leading" constant="10" id="IUG-ID-Wj2"/>
+                            <constraint firstAttribute="trailing" secondItem="CeS-mG-2LV" secondAttribute="trailing" constant="5" id="Y9p-dX-3QL"/>
+                            <constraint firstAttribute="trailing" secondItem="D4d-mK-xKW" secondAttribute="trailing" constant="5" id="bgu-ux-UvG"/>
+                            <constraint firstAttribute="trailing" secondItem="ZLI-FL-62Y" secondAttribute="trailing" constant="5" id="fhv-fz-X7H"/>
+                            <constraint firstItem="D4d-mK-xKW" firstAttribute="leading" secondItem="XdA-9H-QLB" secondAttribute="trailing" constant="5" id="hih-8u-XaA"/>
+                            <constraint firstItem="CeS-mG-2LV" firstAttribute="top" secondItem="GFD-Sx-M9S" secondAttribute="top" constant="5" id="ppO-TL-Hew"/>
+                            <constraint firstAttribute="bottom" secondItem="ZLI-FL-62Y" secondAttribute="bottom" constant="5" id="qLt-qQ-1wj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="GFD-Sx-M9S" secondAttribute="bottom" constant="5" id="6w9-NU-3hd"/>
+                    <constraint firstItem="GFD-Sx-M9S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="d60-Ht-GBY"/>
+                    <constraint firstAttribute="trailing" secondItem="GFD-Sx-M9S" secondAttribute="trailing" constant="5" id="gSY-KZ-Gg2"/>
+                    <constraint firstItem="GFD-Sx-M9S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="o5n-lr-8vD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="GFD-Sx-M9S" id="I2O-fI-cIB"/>
+                <outlet property="countLB" destination="ZLI-FL-62Y" id="PPi-5X-dmH"/>
+                <outlet property="delete" destination="CeS-mG-2LV" id="BAv-1e-p2I"/>
+                <outlet property="logo" destination="XdA-9H-QLB" id="7AV-at-SBK"/>
+                <outlet property="priceLB" destination="u3c-QV-net" id="8m5-9J-Kou"/>
+                <outlet property="titleLB" destination="D4d-mK-xKW" id="KJg-fw-33A"/>
+            </connections>
+            <point key="canvasLocation" x="5.7971014492753632" y="32.8125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete" width="20" height="20"/>
+    </resources>
+</document>
