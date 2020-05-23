@@ -252,5 +252,40 @@ class Helper_API:NSObject{
                   
               }
     
+    func getOrders(status:Int,completion : @escaping(_ code: Int, _ result:[JSON]?) -> () ){
+        let headers = [
+            "Content-Type":"application/json"
+        ]
+        let params = ["user_id":UserDefaults.standard.integer(forKey: "id"),
+                      "status":status
+        ]
+       Alamofire.request(MyOrdersURL, method: .get, parameters: params, encoding:URLEncoding.default , headers: headers).validate(statusCode: 200..<300).responseJSON { (response) in
+                 switch response.response?.statusCode {
+                 case 200?:
+                     //print("get all cities == \(response.response?.statusCode ?? 0)")
+                     switch response.result{
+                     case .failure( let error):
+                         print(error)
+                         completion(response.response?.statusCode ?? 0,nil)
+                     case .success(let value):
+                         let json = JSON(value)
+                         let datobj = json["innerData"]
+                         print(datobj)
+                         completion(response.response?.statusCode ?? 0,datobj.arrayValue)
+                     }
+                 default:
+                     print("get My Orders code  == \(response.response?.statusCode ?? 0)")
+                     if let dat = response.data {
+                         //print(dat)
+                         let responseJSON = try? JSON(data: dat)
+                         print(responseJSON)
+                     }
+                     completion(response.response?.statusCode ?? 0,nil)
+                     
+                 }
+             }
+             
+         }
+    
 }
 

@@ -21,6 +21,7 @@ class HomeVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
     var layout = UICollectionViewFlowLayout()
     var category_id = 0
     var txt = ""
+    var is_login =  UserDefaults.standard.bool(forKey: "is_login")
     override func viewDidLoad() {
         super.viewDidLoad()
         getSlider()
@@ -123,7 +124,11 @@ class HomeVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     @IBAction func cartBTN(_ sender: Any) {
+        if is_login{
     performSegue(withIdentifier: "cartSegue", sender: self)
+        }else{
+            self.loginAlert()
+        }
     }
     
     

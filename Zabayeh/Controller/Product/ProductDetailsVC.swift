@@ -82,6 +82,9 @@ class ProductDetailsVC: UIViewController {
         }
     }
     func settings(){
+        chipping.layer.borderWidth = 1.0
+        chipping.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        chipping.RoundCorners(cornerRadius: 3.0)
         complete.RoundCorners(cornerRadius: 20.0)
         logo.layer.borderWidth = 1.0
         logo.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)

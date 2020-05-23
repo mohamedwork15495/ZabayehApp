@@ -124,7 +124,8 @@ class CartVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     }
     
     @IBAction func orderNowBTN(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+       // self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.selectedIndex = 0
     }
     @IBAction func completeBTN(_ sender: Any) {
         var order = [[String:Any]]()

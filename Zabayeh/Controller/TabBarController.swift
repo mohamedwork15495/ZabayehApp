@@ -17,7 +17,16 @@ class TabBarController: UITabBarController ,UITabBarControllerDelegate{
 
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-           if viewController == tabBarController.viewControllers![3] {
+           if viewController == tabBarController.viewControllers![1] {
+               if is_login{
+                  return true
+               }else{
+               let vc = UIStoryboard(name: "Main", bundle: nil)
+               let rootVc = vc.instantiateViewController(withIdentifier: "loginID")
+               self.present(rootVc, animated: true, completion: nil)
+               return false
+               }
+           }else if viewController == tabBarController.viewControllers![3] {
                if is_login{
                   return true
                }else{

@@ -13,6 +13,7 @@ import MOLH
 class SettingsVC: UIViewController {
     var banks:String?
     let is_arabic = MOLHLanguage.currentAppleLanguage() == "en" ? "en" : "ar"
+    let is_login = UserDefaults.standard.bool(forKey: "is_login")
     var terms:String?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,4 +84,13 @@ getSettings()
     self.present(alertController, animated: true)
     
     }
+    
+    @IBAction func cartBTN(_ sender: Any) {
+    if is_login{
+       performSegue(withIdentifier: "cartSegue", sender: self)
+           }else{
+               self.loginAlert()
+           }
+    }
+    
 }

@@ -40,7 +40,7 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     func loginAlert() {
-        let alertController = UIAlertController(title: "fastOne".localized(), message: "loginPlease".localized(), preferredStyle: .alert)
+        let alertController = UIAlertController(title: nil, message: "loginPlease".localized(), preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "ok".localized(), style: .default, handler: { action in
              let vc = UIStoryboard(name: "Main", bundle: nil)
                let rootVc = vc.instantiateViewController(withIdentifier: "loginID")

@@ -12,7 +12,7 @@ import SwiftyJSON
 import FTToastIndicator
 class OffersVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     
-    
+    let is_login = UserDefaults.standard.bool(forKey: "is_login")
     @IBOutlet weak var tableView: UITableView!
     var offers = [JSON]()
     var offer_id = 0
@@ -81,5 +81,12 @@ class OffersVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
         }
     }
     
+    @IBAction func cartBTN(_ sender: Any) {
+    if is_login{
+    performSegue(withIdentifier: "cartSegue", sender: self)
+        }else{
+            self.loginAlert()
+        }
+    }
     
 }

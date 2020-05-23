@@ -59,6 +59,9 @@
 		05D67727247957340049A9DA /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D67726247957340049A9DA /* ContactUsVC.swift */; };
 		05D6772A24795DD50049A9DA /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6772924795DD50049A9DA /* MyProfileVC.swift */; };
 		05D6772C24795DE50049A9DA /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6772B24795DE50049A9DA /* EditProfileVC.swift */; };
+		05D677302479703D0049A9DA /* MyOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6772F2479703D0049A9DA /* MyOrdersVC.swift */; };
+		05D677342479743D0049A9DA /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D677322479743D0049A9DA /* OrderCell.swift */; };
+		05D677352479743D0049A9DA /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05D677332479743D0049A9DA /* OrderCell.xib */; };
 		05F411712475170D0013876C /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4116F2475170D0013876C /* CartCell.swift */; };
 		05F411722475170D0013876C /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F411702475170D0013876C /* CartCell.xib */; };
 		05F4117524751E650013876C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4117424751E650013876C /* CartVC.swift */; };
@@ -123,6 +126,9 @@
 		05D67726247957340049A9DA /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		05D6772924795DD50049A9DA /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		05D6772B24795DE50049A9DA /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		05D6772F2479703D0049A9DA /* MyOrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersVC.swift; sourceTree = "<group>"; };
+		05D677322479743D0049A9DA /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		05D677332479743D0049A9DA /* OrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		05F4116F2475170D0013876C /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		05F411702475170D0013876C /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		05F4117424751E650013876C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 		053DEFED24694CBD0076FB71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				05D6772E2479701F0049A9DA /* MyOrders */,
 				05D6772824795DC60049A9DA /* Profile */,
 				05D6771F247951600049A9DA /* Settings */,
 				05F4117324751E4D0013876C /* Cart */,
@@ -180,6 +187,7 @@
 		053DEFEE24694CC50076FB71 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				05D677312479742B0049A9DA /* OrderCell */,
 				05F4116E247516F30013876C /* CartCell */,
 				05B2530B2470AD810021E7D2 /* OffersCell */,
 				05B25301247096220021E7D2 /* SubCatCell */,
@@ -361,6 +369,23 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		05D6772E2479701F0049A9DA /* MyOrders */ = {
+			isa = PBXGroup;
+			children = (
+				05D6772F2479703D0049A9DA /* MyOrdersVC.swift */,
+			);
+			path = MyOrders;
+			sourceTree = "<group>";
+		};
+		05D677312479742B0049A9DA /* OrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				05D677322479743D0049A9DA /* OrderCell.swift */,
+				05D677332479743D0049A9DA /* OrderCell.xib */,
+			);
+			path = OrderCell;
+			sourceTree = "<group>";
+		};
 		05F4116E247516F30013876C /* CartCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +484,7 @@
 			files = (
 				05F411722475170D0013876C /* CartCell.xib in Resources */,
 				05620F7324683F3600DFD368 /* LaunchScreen.storyboard in Resources */,
+				05D677352479743D0049A9DA /* OrderCell.xib in Resources */,
 				053DF020246965F60076FB71 /* Localizable.strings in Resources */,
 				053DF00B2469618A0076FB71 /* Cairo-Bold.ttf in Resources */,
 				05620F7024683F3600DFD368 /* Assets.xcassets in Resources */,
@@ -550,6 +576,7 @@
 				05F4117724754FE10013876C /* Auth_API.swift in Sources */,
 				05620F6E24683F3400DFD368 /* Zabayeh.xcdatamodeld in Sources */,
 				05B25304247096380021E7D2 /* SubCatCell.swift in Sources */,
+				05D677302479703D0049A9DA /* MyOrdersVC.swift in Sources */,
 				0548126824715527008D024A /* ProductDetailsVC.swift in Sources */,
 				053DF017246961AB0076FB71 /* ImagePicker.swift in Sources */,
 				053DF0002469614B0076FB71 /* Uicolor.swift in Sources */,
@@ -569,6 +596,7 @@
 				053DF01C246964210076FB71 /* LoginVC.swift in Sources */,
 				05D6771E2479367B0049A9DA /* TabBarController.swift in Sources */,
 				052518162470166E00ECFF2D /* VerificationCodeVC.swift in Sources */,
+				05D677342479743D0049A9DA /* OrderCell.swift in Sources */,
 				05D6772A24795DD50049A9DA /* MyProfileVC.swift in Sources */,
 				05D67721247951730049A9DA /* SettingsVC.swift in Sources */,
 				053DF0062469614B0076FB71 /* Extensions.swift in Sources */,

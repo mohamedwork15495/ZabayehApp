@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydt-x3-GjX">
-                                <rect key="frame" x="324" y="802" width="70" height="40"/>
+                                <rect key="frame" x="322" y="802" width="72" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rqs-AC-REt"/>
                                 </constraints>
@@ -515,17 +515,77 @@
             </objects>
             <point key="canvasLocation" x="1577" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--My Orders-->
         <scene sceneID="byW-JQ-xxZ">
             <objects>
-                <viewController id="NuN-8N-n1l" sceneMemberID="viewController">
+                <viewController id="NuN-8N-n1l" customClass="MyOrdersVC" customModule="Zabayeh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5KG-ho-igh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noData" translatesAutoresizingMaskIntoConstraints="NO" id="fQN-de-VNA">
+                                <rect key="frame" x="0.0" y="288" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="fcu-5Q-q95"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO ORDERS FOUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGE-gs-e3y">
+                                <rect key="frame" x="20" y="508" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rLu-3W-dgX">
+                                <rect key="frame" x="0.0" y="148" width="414" height="665"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="04V-k9-wug">
+                                <rect key="frame" x="10" y="98" width="394" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ghD-is-1m0"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Pending"/>
+                                    <segment title="In progress"/>
+                                    <segment title="Completed"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.7843137255" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchSegment:" destination="NuN-8N-n1l" eventType="valueChanged" id="oU2-zY-6my"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rLu-3W-dgX" firstAttribute="bottom" secondItem="kkv-Wj-gL3" secondAttribute="bottom" id="7Br-4p-G0f"/>
+                            <constraint firstItem="fQN-de-VNA" firstAttribute="top" secondItem="kkv-Wj-gL3" secondAttribute="top" constant="200" id="Gki-yG-C9r"/>
+                            <constraint firstItem="kkv-Wj-gL3" firstAttribute="trailing" secondItem="gGE-gs-e3y" secondAttribute="trailing" constant="20" id="J1w-fZ-rx0"/>
+                            <constraint firstItem="rLu-3W-dgX" firstAttribute="top" secondItem="04V-k9-wug" secondAttribute="bottom" constant="10" id="LxZ-ig-ymP"/>
+                            <constraint firstItem="gGE-gs-e3y" firstAttribute="leading" secondItem="kkv-Wj-gL3" secondAttribute="leading" constant="20" id="NsA-63-pfD"/>
+                            <constraint firstItem="gGE-gs-e3y" firstAttribute="top" secondItem="fQN-de-VNA" secondAttribute="bottom" constant="20" id="OYB-0T-348"/>
+                            <constraint firstItem="04V-k9-wug" firstAttribute="leading" secondItem="kkv-Wj-gL3" secondAttribute="leading" constant="10" id="TWg-xM-NhG"/>
+                            <constraint firstItem="kkv-Wj-gL3" firstAttribute="trailing" secondItem="fQN-de-VNA" secondAttribute="trailing" id="ZFV-az-oU7"/>
+                            <constraint firstItem="fQN-de-VNA" firstAttribute="leading" secondItem="kkv-Wj-gL3" secondAttribute="leading" id="hYB-Z7-1YC"/>
+                            <constraint firstItem="rLu-3W-dgX" firstAttribute="leading" secondItem="kkv-Wj-gL3" secondAttribute="leading" id="mm6-pj-WnK"/>
+                            <constraint firstItem="rLu-3W-dgX" firstAttribute="trailing" secondItem="kkv-Wj-gL3" secondAttribute="trailing" id="qh9-af-G3p"/>
+                            <constraint firstItem="04V-k9-wug" firstAttribute="top" secondItem="kkv-Wj-gL3" secondAttribute="top" constant="10" id="vEN-6g-t1k"/>
+                            <constraint firstItem="kkv-Wj-gL3" firstAttribute="trailing" secondItem="04V-k9-wug" secondAttribute="trailing" constant="10" id="xGJ-40-Zir"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kkv-Wj-gL3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0e1-Ly-197"/>
+                    <navigationItem key="navigationItem" title="My Orders" id="0e1-Ly-197">
+                        <barButtonItem key="leftBarButtonItem" image="cartT" width="50" id="YtN-ma-oxa">
+                            <connections>
+                                <action selector="cartBTN:" destination="NuN-8N-n1l" id="aPN-Vf-h0h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentController" destination="04V-k9-wug" id="VRG-uZ-YF0"/>
+                        <outlet property="tableView" destination="rLu-3W-dgX" id="30P-WR-Xmu"/>
+                        <segue destination="PL9-MV-sBU" kind="show" identifier="cartSegue" id="sIi-Et-1MY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1y-R9-sNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1209,7 +1269,7 @@
             </objects>
             <point key="canvasLocation" x="8601.4492753623199" y="-184.15178571428569"/>
         </scene>
-        <!--OffersVC-->
+        <!--Offers-->
         <scene sceneID="qwt-9U-58w">
             <objects>
                 <viewController id="xRI-BD-wvJ" customClass="OffersVC" customModule="Zabayeh" customModuleProvider="target" sceneMemberID="viewController">
@@ -1232,12 +1292,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XNa-r1-lde"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hxH-Y2-jmz">
+                    <navigationItem key="navigationItem" title="Offers" id="hxH-Y2-jmz">
                         <barButtonItem key="backBarButtonItem" title=" " id="tmk-dU-gYl"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="cartT" width="50" id="r6p-aK-2u6">
+                            <connections>
+                                <action selector="cartBTN:" destination="xRI-BD-wvJ" id="mp5-uy-xh3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="tYk-gr-Pn7" id="ZDe-g0-0pB"/>
                         <segue destination="jKw-Z9-lDX" kind="show" identifier="offerSegue" id="C2n-3E-VuY"/>
+                        <segue destination="PL9-MV-sBU" kind="show" identifier="cartSegue" id="Jds-KL-3nC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIY-Lc-27U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1372,13 +1438,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="Lyh-OG-aEn">
                         <barButtonItem key="backBarButtonItem" title=" " id="fgs-Az-GNy"/>
+                        <barButtonItem key="leftBarButtonItem" image="cartT" width="50" id="GKM-3a-6HQ">
+                            <connections>
+                                <action selector="cartBTn:" destination="wcs-Ed-Clp" id="5sb-GL-iau"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTF" destination="VnS-ow-xn0" id="f9I-6L-RAz"/>
                         <outlet property="passwordTF" destination="6ek-d5-71x" id="43r-DP-x1G"/>
                         <outlet property="phoneTF" destination="c0b-5K-xS9" id="qwM-TG-35I"/>
                         <outlet property="update" destination="oaG-ks-Pw8" id="MGw-t3-YS1"/>
-                        <segue destination="BVR-70-jbi" kind="show" id="ufc-8R-43C"/>
+                        <segue destination="BVR-70-jbi" kind="show" identifier="editSegue" id="ufc-8R-43C"/>
+                        <segue destination="PL9-MV-sBU" kind="show" identifier="cartSegue" id="e0C-BL-2hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rD-Rq-IfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1388,7 +1460,7 @@
         <!--Edit Profile-->
         <scene sceneID="WMP-0F-Xvd">
             <objects>
-                <viewController id="BVR-70-jbi" sceneMemberID="viewController">
+                <viewController id="BVR-70-jbi" customClass="EditProfileVC" customModule="Zabayeh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dde-xe-owc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1444,6 +1516,7 @@
                                 <connections>
                                     <action selector="sendBTN:" destination="FY1-3u-JcW" eventType="touchUpInside" id="eWx-wH-6SN"/>
                                     <action selector="updateBTN:" destination="wcs-Ed-Clp" eventType="touchUpInside" id="998-7I-HC8"/>
+                                    <action selector="updateBTN:" destination="BVR-70-jbi" eventType="touchUpInside" id="PhE-b2-cWu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1459,12 +1532,18 @@
                         <viewLayoutGuide key="safeArea" id="bFN-rL-Ie0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="hgq-6v-Liq"/>
+                    <connections>
+                        <outlet property="nameTF" destination="ovY-4M-IeR" id="fb0-GJ-G8E"/>
+                        <outlet property="passwordTF" destination="oBu-QG-u1Z" id="mo2-b7-2Yq"/>
+                        <outlet property="phoneTF" destination="bqc-1q-Fff" id="Gif-Dd-Las"/>
+                        <outlet property="update" destination="E3Q-Er-leF" id="JVX-QM-Mnu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0Z-JV-s5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8300" y="1828"/>
         </scene>
-        <!--SettingsVC-->
+        <!--More-->
         <scene sceneID="dMF-JF-xzX">
             <objects>
                 <viewController id="jPS-t8-StC" customClass="SettingsVC" customModule="Zabayeh" customModuleProvider="target" sceneMemberID="viewController">
@@ -1741,13 +1820,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rav-Vr-18C"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OrN-sh-SYT">
+                    <navigationItem key="navigationItem" title="More" id="OrN-sh-SYT">
                         <barButtonItem key="backBarButtonItem" title=" " id="47s-Px-HNQ"/>
+                        <barButtonItem key="leftBarButtonItem" image="cartT" width="50" id="gWg-cl-4Oh">
+                            <connections>
+                                <action selector="cartBTN:" destination="jPS-t8-StC" id="SW8-N0-GlH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="9HN-BQ-RFr" kind="show" identifier="bankAccountsSegue" id="2jW-NS-gor"/>
                         <segue destination="qOM-TV-oGx" kind="show" identifier="termsSegue" id="psc-Ft-SJG"/>
                         <segue destination="FY1-3u-JcW" kind="show" identifier="contactSegue" id="Bbm-mY-2l5"/>
+                        <segue destination="PL9-MV-sBU" kind="show" identifier="cartSegue" id="vva-Y8-OtK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJy-T5-He5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1942,7 +2027,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO CATEGORIES FOUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAL-ls-Dnb">
-                                                <rect key="frame" x="119.5" y="280" width="175.5" height="32"/>
+                                                <rect key="frame" x="107.5" y="280" width="199" height="20"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2116,7 +2201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aJ-tK-okm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4295.652173913044" y="-943.52678571428567"/>
+            <point key="canvasLocation" x="8300" y="694"/>
         </scene>
         <!--Sub CatVC-->
         <scene sceneID="Ybd-ip-mOu">
@@ -2134,7 +2219,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO PRODUCTS FOUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aam-MA-QF3">
-                                <rect key="frame" x="20" y="428" width="374" height="32"/>
+                                <rect key="frame" x="20" y="428" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2173,7 +2258,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="fIX-zI-IKB">
             <objects>
-                <tabBarController storyboardIdentifier="homeID" modalPresentationStyle="fullScreen" id="7xo-h3-mGb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="homeID" modalPresentationStyle="fullScreen" id="7xo-h3-mGb" customClass="TabBarController" customModule="Zabayeh" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sdU-8l-Tdg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2275,6 +2360,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cfs-xs-Rsg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.7843137255" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.7843137255" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2336,6 +2425,7 @@
         <image name="user" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sIi-Et-1MY"/>
         <segue reference="bWC-uC-6au"/>
     </inferredMetricsTieBreakers>
 </document>
