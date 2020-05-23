@@ -44,8 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,MOLHResetable,UNUserNotif
         UNUserNotificationCenter.current().requestAuthorization(options: [.sound,.alert,.announcement]) { (granted, error) in
             DispatchQueue.main.async {UIApplication.shared.registerForRemoteNotifications()}}
         application.beginBackgroundTask(withName: "showNotification", expirationHandler: nil)
-        
-        //self.splashScreen()
+        self.splashScreen()
         return true
     }
     private func splashScreen(){

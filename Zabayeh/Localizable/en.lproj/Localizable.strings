@@ -25,5 +25,10 @@
 "enterName" = "Enter name";
 "enterPassword" = "Enter Password";
 "enterStrongPassword" = "Enter strong password";
-
-
+"success" = "Success";
+"enterEmail" = "Enter email address";
+"enterValidEmail" = "Enter valid email address";
+"entermsg" = "Enter your message";
+"Cancel" = "Cancel";
+"Yes" = "Yes";
+"doYouwantlogout" = "Do You Want To LogOut?";

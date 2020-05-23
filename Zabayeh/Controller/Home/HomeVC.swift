@@ -122,6 +122,9 @@ class HomeVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
         slideView.setImageInputs(imgSource)
     }
     
+    @IBAction func cartBTN(_ sender: Any) {
+    performSegue(withIdentifier: "cartSegue", sender: self)
+    }
     
     
 }

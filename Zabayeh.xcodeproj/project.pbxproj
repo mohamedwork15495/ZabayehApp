@@ -52,6 +52,13 @@
 		05B253112470B64F0021E7D2 /* SubOffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B253102470B64F0021E7D2 /* SubOffersVC.swift */; };
 		05B7316124768362009C6D6E /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7316024768362009C6D6E /* RegisterVC.swift */; };
 		05C4AA3024729A0600C1CB16 /* CompletePurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C4AA2F24729A0600C1CB16 /* CompletePurchaseVC.swift */; };
+		05D6771E2479367B0049A9DA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6771D2479367B0049A9DA /* TabBarController.swift */; };
+		05D67721247951730049A9DA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D67720247951730049A9DA /* SettingsVC.swift */; };
+		05D67723247951C80049A9DA /* BanksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D67722247951C80049A9DA /* BanksVC.swift */; };
+		05D677252479530D0049A9DA /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D677242479530D0049A9DA /* TermsVC.swift */; };
+		05D67727247957340049A9DA /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D67726247957340049A9DA /* ContactUsVC.swift */; };
+		05D6772A24795DD50049A9DA /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6772924795DD50049A9DA /* MyProfileVC.swift */; };
+		05D6772C24795DE50049A9DA /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6772B24795DE50049A9DA /* EditProfileVC.swift */; };
 		05F411712475170D0013876C /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4116F2475170D0013876C /* CartCell.swift */; };
 		05F411722475170D0013876C /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F411702475170D0013876C /* CartCell.xib */; };
 		05F4117524751E650013876C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4117424751E650013876C /* CartVC.swift */; };
@@ -109,6 +116,13 @@
 		05B253102470B64F0021E7D2 /* SubOffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubOffersVC.swift; sourceTree = "<group>"; };
 		05B7316024768362009C6D6E /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		05C4AA2F24729A0600C1CB16 /* CompletePurchaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePurchaseVC.swift; sourceTree = "<group>"; };
+		05D6771D2479367B0049A9DA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		05D67720247951730049A9DA /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		05D67722247951C80049A9DA /* BanksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksVC.swift; sourceTree = "<group>"; };
+		05D677242479530D0049A9DA /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		05D67726247957340049A9DA /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
+		05D6772924795DD50049A9DA /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		05D6772B24795DE50049A9DA /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		05F4116F2475170D0013876C /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		05F411702475170D0013876C /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		05F4117424751E650013876C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
@@ -151,11 +165,14 @@
 		053DEFED24694CBD0076FB71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				05D6772824795DC60049A9DA /* Profile */,
+				05D6771F247951600049A9DA /* Settings */,
 				05F4117324751E4D0013876C /* Cart */,
 				05481266247154D4008D024A /* Product */,
 				05B253082470AD1F0021E7D2 /* Offers */,
 				052518172470351600ECFF2D /* Home */,
 				053DF01A246964100076FB71 /* Auth */,
+				05D6771D2479367B0049A9DA /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +339,26 @@
 				05B2530D2470AD940021E7D2 /* OffersCell.xib */,
 			);
 			path = OffersCell;
+			sourceTree = "<group>";
+		};
+		05D6771F247951600049A9DA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				05D67720247951730049A9DA /* SettingsVC.swift */,
+				05D67722247951C80049A9DA /* BanksVC.swift */,
+				05D677242479530D0049A9DA /* TermsVC.swift */,
+				05D67726247957340049A9DA /* ContactUsVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		05D6772824795DC60049A9DA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				05D6772924795DD50049A9DA /* MyProfileVC.swift */,
+				05D6772B24795DE50049A9DA /* EditProfileVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		05F4116E247516F30013876C /* CartCell */ = {
@@ -507,7 +544,9 @@
 				053DF018246961AB0076FB71 /* CheckInternet.swift in Sources */,
 				05B2530E2470AD940021E7D2 /* OffersCell.swift in Sources */,
 				05B25307247098AD0021E7D2 /* SubCatVC.swift in Sources */,
+				05D67727247957340049A9DA /* ContactUsVC.swift in Sources */,
 				053DF0072469614B0076FB71 /* UITextView.swift in Sources */,
+				05D67723247951C80049A9DA /* BanksVC.swift in Sources */,
 				05F4117724754FE10013876C /* Auth_API.swift in Sources */,
 				05620F6E24683F3400DFD368 /* Zabayeh.xcdatamodeld in Sources */,
 				05B25304247096380021E7D2 /* SubCatCell.swift in Sources */,
@@ -525,15 +564,20 @@
 				053DF0012469614B0076FB71 /* UIView.swift in Sources */,
 				053DF0022469614B0076FB71 /* ImageView.swift in Sources */,
 				053DF0032469614B0076FB71 /* Uilable.swift in Sources */,
+				05D677252479530D0049A9DA /* TermsVC.swift in Sources */,
 				05B253112470B64F0021E7D2 /* SubOffersVC.swift in Sources */,
 				053DF01C246964210076FB71 /* LoginVC.swift in Sources */,
+				05D6771E2479367B0049A9DA /* TabBarController.swift in Sources */,
 				052518162470166E00ECFF2D /* VerificationCodeVC.swift in Sources */,
+				05D6772A24795DD50049A9DA /* MyProfileVC.swift in Sources */,
+				05D67721247951730049A9DA /* SettingsVC.swift in Sources */,
 				053DF0062469614B0076FB71 /* Extensions.swift in Sources */,
 				05B7316124768362009C6D6E /* RegisterVC.swift in Sources */,
 				0525181D2470366000ECFF2D /* Config.swift in Sources */,
 				053DF016246961AB0076FB71 /* LoginAlert.swift in Sources */,
 				053DEFFF2469614B0076FB71 /* UitextField.swift in Sources */,
 				052518142470163600ECFF2D /* OTPStackView.swift in Sources */,
+				05D6772C24795DE50049A9DA /* EditProfileVC.swift in Sources */,
 				05B252FF247091B40021E7D2 /* CategoryCell.swift in Sources */,
 				0525181B2470361E00ECFF2D /* Helper_API.swift in Sources */,
 				053DF015246961AB0076FB71 /* Validation.swift in Sources */,

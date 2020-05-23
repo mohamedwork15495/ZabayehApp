@@ -19,7 +19,7 @@ class CompletePurchaseVC: UIViewController ,GMSMapViewDelegate,FPNTextFieldDeleg
     var phone:String?
     var codePhone = ""
     var listController: FPNCountryListViewController = FPNCountryListViewController(style: .grouped)
-    var product = [String:Any]()
+    var product = [String:String]()
     @IBOutlet weak var add: UIButton!
     @IBOutlet weak var viewMap: GMSMapView!
     @IBOutlet weak var addressTF: UITextField!
@@ -123,22 +123,25 @@ class CompletePurchaseVC: UIViewController ,GMSMapViewDelegate,FPNTextFieldDeleg
         }else{
             // add to cart
             let item = product
+            
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let entity = NSEntityDescription.entity(forEntityName: "Cart", in: context)
             let newEntry = NSManagedObject(entity: entity!, insertInto: context)
-            newEntry.setValue(item["product_id"], forKey: "product_id")
-            newEntry.setValue(UserDefaults.standard.string(forKey: "user_id"), forKey: "user_id")
+            
+            newEntry.setValue(item["product_id"]!, forKey: "product_id")
+            newEntry.setValue("\(UserDefaults.standard.integer(forKey: "id"))", forKey: "user_id")
             newEntry.setValue(codePhone + phone!, forKey: "mobile")
             newEntry.setValue("\(lon!)", forKey: "longitude")
             newEntry.setValue("\(lat!)", forKey: "latitude")
             newEntry.setValue(address, forKey: "address")
-            newEntry.setValue(item["order_total"], forKey: "order_total")
-            newEntry.setValue(item["kersh_and_mosran"], forKey: "kersh_and_mosran")
-            newEntry.setValue(item["cutting"], forKey: "cutting")
-            newEntry.setValue(item["description"], forKey: "desc")
-            newEntry.setValue(item["quantity"], forKey: "quantity")
-            newEntry.setValue(item["name"], forKey: "name")
-            newEntry.setValue(item["image"], forKey: "image")
+            newEntry.setValue(item["order_total"]!, forKey: "order_total")
+            newEntry.setValue(item["kersh_and_mosran"]!, forKey: "kersh_and_mosran")
+            newEntry.setValue(item["cutting"]!, forKey: "cutting")
+            newEntry.setValue(item["covering"]!, forKey: "covering")
+            newEntry.setValue(item["description"]!, forKey: "desc")
+            newEntry.setValue(item["quantity"]!, forKey: "quantity")
+            newEntry.setValue(item["name"]!, forKey: "name")
+            newEntry.setValue(item["image"]!, forKey: "image")
             do{
                 try context.save()
                 FTToastIndicator.setToastIndicatorStyle(.dark)

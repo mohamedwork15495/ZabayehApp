@@ -59,6 +59,7 @@ class LoginVC: UIViewController ,FPNTextFieldDelegate{
                     self.status_code = code
                     self.setPhone()
                 }else if code == 404{
+                    self.status_code = code
                     self.setPhone()
                 }else{
                     FTToastIndicator.setToastIndicatorStyle(.dark)
@@ -67,6 +68,7 @@ class LoginVC: UIViewController ,FPNTextFieldDelegate{
             }
         }
     }
+    
     func setPhone(){
            let phoneNumber = codePhone + phone!
            print("phone \(phoneNumber)")
@@ -89,10 +91,11 @@ class LoginVC: UIViewController ,FPNTextFieldDelegate{
     }
     
     @IBAction func skipBTN(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil)
+        let rootVc = vc.instantiateViewController(withIdentifier: "homeID")
+        self.present(rootVc, animated: true, completion: nil)
     }
-    
-    @IBAction func newAccountBTN(_ sender: Any) {
-    }
+  
     
     func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
         let x = dialCode.replacingOccurrences(of: "+", with: "00")

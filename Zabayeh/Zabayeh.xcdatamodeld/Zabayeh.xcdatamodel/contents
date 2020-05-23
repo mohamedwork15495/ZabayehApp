@@ -2,19 +2,19 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
-        <attribute name="covering" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="cutting" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="covering" optional="YES" attributeType="String"/>
+        <attribute name="cutting" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
-        <attribute name="kersh_and_mosran" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="kersh_and_mosran" optional="YES" attributeType="String"/>
         <attribute name="latitude" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="String"/>
         <attribute name="mobile" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="order_total" optional="YES" attributeType="String"/>
-        <attribute name="product_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="user_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="product_id" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="String"/>
+        <attribute name="user_id" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Cart" positionX="-63" positionY="-18" width="128" height="253"/>

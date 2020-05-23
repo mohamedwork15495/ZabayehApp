@@ -244,7 +244,7 @@ class ProductDetailsVC: UIViewController {
         }
     }
     
-    var pro = [String:Any]()
+    var pro = [String:String]()
     @IBAction func completeBTN(_ sender: Any) {
         let desc = detailsLB.text!
         if covering == -1 {
@@ -254,14 +254,14 @@ class ProductDetailsVC: UIViewController {
             FTToastIndicator.setToastIndicatorStyle(.dark)
             FTToastIndicator.showToastMessage("enterOrderDetails".localized())
         }else{
-            pro["product_id"] = product!["id"].intValue
-            pro["user_id"] = (UserDefaults.standard.string(forKey: "user_id")! as NSString).integerValue
-            pro["order_total"] = tot
-            pro["kersh_and_mosran"] = kersh_and_mosran
-            pro["cutting"] = cutting
-            pro["covering"] = covering
+            pro["product_id"] = "\(product!["id"].intValue)"
+            pro["user_id"] = "\(UserDefaults.standard.integer(forKey: "id"))"
+            pro["order_total"] = "\(tot)"
+            pro["kersh_and_mosran"] = "\(kersh_and_mosran)"
+            pro["cutting"] = "\(cutting)"
+            pro["covering"] = "\(covering)"
             pro["description"] = desc
-            pro["quantity"] = (amountLB.text! as NSString).integerValue
+            pro["quantity"] = amountLB.text!
             pro["name"] = product!["name"].stringValue
             pro["image"] = product!["image"].stringValue
             performSegue(withIdentifier: "completeSegue", sender: self)

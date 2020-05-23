@@ -89,6 +89,7 @@ class VerificationCodeVC: UIViewController ,OTPDelegate{
                     self.showAlert(message: error.localizedDescription)
                     return
                 }
+                print("status code \(self.status_code)")
                 SVProgressHUD.dismiss()
                 if self.status_code == 200{
                     UserDefaults.standard.set(true, forKey: "is_login")
@@ -99,7 +100,6 @@ class VerificationCodeVC: UIViewController ,OTPDelegate{
                     self.performSegue(withIdentifier: "registerSegue", sender: self)
                     print("register")
                 }
-                
             }
         }
     }

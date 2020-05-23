@@ -16,6 +16,7 @@ class SubOffersVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
     var products = [JSON]()
+    var product:JSON!
     var offer_id = 0
     var txt = ""
     override func viewDidLoad() {
@@ -44,6 +45,18 @@ class SubOffersVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
         cell.titleLB.text = item["name"].stringValue
         return cell
       }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pos = indexPath.row
+        let item = products[pos]
+        product = item
+        performSegue(withIdentifier: "detailsSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsSegue"{
+            let des = segue.destination as! ProductDetailsVC
+            des.product = product
+        }
+    }
     func getproducts(){
            SVProgressHUD.show()
         Helper_API().getSubOffers(offer_id: offer_id) { (code, result) in

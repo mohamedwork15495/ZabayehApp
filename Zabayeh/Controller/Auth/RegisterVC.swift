@@ -19,15 +19,15 @@ class RegisterVC: UIViewController,FPNTextFieldDelegate {
     @IBOutlet weak var register: UIButton!
     @IBOutlet weak var phoneTF: FPNTextField!
     var validPhoneNumber = false
-       var phoneCode:String?
-       var phone:String?
-       var codePhone = ""
-       var status_code = 0
-       var listController: FPNCountryListViewController = FPNCountryListViewController(style: .grouped)
-     
+    var phoneCode:String?
+    var phone:String?
+    var codePhone = ""
+    var status_code = 0
+    var listController: FPNCountryListViewController = FPNCountryListViewController(style: .grouped)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-setting()
+        setting()
     }
     func setting(){
         register.RoundCorners(cornerRadius: 20.0)
@@ -38,19 +38,19 @@ setting()
         passwordView.RoundCorners(cornerRadius: 5.0)
         passwordView.dropShadow()
         phoneTF.delegate = self
-               phoneTF.hasPhoneNumberExample = false
-               phoneTF.hasPhoneNumberExample = false // true by default
-               phoneTF.placeholder = "Phone Number"
-               phoneTF.setFlag(countryCode: FPNCountryCode(rawValue: Locale.current.regionCode!)!)
-               phoneTF.displayMode = .list // .picker by default
-               listController.setup(repository: phoneTF.countryRepository)
-               listController.didSelect = { [weak self] country in
-                   self?.phoneTF.setFlag(countryCode: country.code)
-               }
+        phoneTF.hasPhoneNumberExample = false
+        phoneTF.hasPhoneNumberExample = false // true by default
+        phoneTF.placeholder = "Phone Number"
+        phoneTF.setFlag(countryCode: FPNCountryCode(rawValue: Locale.current.regionCode!)!)
+        phoneTF.displayMode = .list // .picker by default
+        listController.setup(repository: phoneTF.countryRepository)
+        listController.didSelect = { [weak self] country in
+            self?.phoneTF.setFlag(countryCode: country.code)
+        }
     }
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//           return self.ArabicNumReplacement(TF: textField, SS: string)
-//       }
+    //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    //           return self.ArabicNumReplacement(TF: textField, SS: string)
+    //       }
     @IBAction func registerBTN(_ sender: Any) {
         let ph = phoneTF.text!
         let name = nameTF.text!
@@ -62,7 +62,7 @@ setting()
             FTToastIndicator.setToastIndicatorStyle(.dark)
             FTToastIndicator.showToastMessage("enterPhoneNumber".localized())
         }else if !validPhoneNumber{
-           FTToastIndicator.setToastIndicatorStyle(.dark)
+            FTToastIndicator.setToastIndicatorStyle(.dark)
             FTToastIndicator.showToastMessage("enterValidPhoneNumber".localized())
         }else if name.isEmpty {
             FTToastIndicator.setToastIndicatorStyle(.dark)
@@ -91,21 +91,21 @@ setting()
         }
     }
     func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
-          let x = dialCode.replacingOccurrences(of: "+", with: "00")
-          codePhone = dialCode
-          phoneCode = x
-      }
-      func fpnDidValidatePhoneNumber(textField: FPNTextField, isValid: Bool) {
-          if isValid {
-              validPhoneNumber = true
-              phone = "\(textField.getRawPhoneNumber()!)"
-          } else {
-              validPhoneNumber = false
-          }
-      }
-      func fpnDisplayCountryList() {
-          let navigationViewController = UINavigationController(rootViewController: listController)
-          present(navigationViewController, animated: true, completion: nil)
-      }
+        let x = dialCode.replacingOccurrences(of: "+", with: "00")
+        codePhone = dialCode
+        phoneCode = x
+    }
+    func fpnDidValidatePhoneNumber(textField: FPNTextField, isValid: Bool) {
+        if isValid {
+            validPhoneNumber = true
+            phone = "\(textField.getRawPhoneNumber()!)"
+        } else {
+            validPhoneNumber = false
+        }
+    }
+    func fpnDisplayCountryList() {
+        let navigationViewController = UINavigationController(rootViewController: listController)
+        present(navigationViewController, animated: true, completion: nil)
+    }
     
 }
