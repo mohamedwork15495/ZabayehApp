@@ -9,8 +9,8 @@
 import UIKit
 import FlagPhoneNumber
 class MyProfileVC: UIViewController {
-    @IBOutlet weak var nameTF: UITextField!
     
+    @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var update: UIButton!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var phoneTF: FPNTextField!
@@ -19,6 +19,7 @@ class MyProfileVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         nameTF.text = dev.string(forKey: "name")!
         phoneTF.text = dev.string(forKey: "mobile")!
+        passwordTF.text = "123456789"
     }
     override func viewDidLoad() {
         super.viewDidLoad()

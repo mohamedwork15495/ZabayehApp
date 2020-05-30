@@ -92,9 +92,8 @@ class CompletePurchaseVC: UIViewController ,GMSMapViewDelegate,FPNTextFieldDeleg
         add.RoundCorners(cornerRadius: 20.0)
         viewMap.RoundCorners(cornerRadius: 5.0)
         phoneTF.delegate = self
-        phoneTF.hasPhoneNumberExample = false
-        phoneTF.hasPhoneNumberExample = false // true by default
-        phoneTF.placeholder = "Phone Number"
+        phoneTF.hasPhoneNumberExample = true // true by default
+        phoneTF.placeholder = "Phone_Number".localized()
         phoneTF.setFlag(countryCode: FPNCountryCode(rawValue: Locale.current.regionCode!)!)
         phoneTF.displayMode = .list // .picker by default
         listController.setup(repository: phoneTF.countryRepository)
@@ -106,6 +105,7 @@ class CompletePurchaseVC: UIViewController ,GMSMapViewDelegate,FPNTextFieldDeleg
     
     
     @IBAction func addToCart(_ sender: Any) {
+        if UserDefaults.standard.bool(forKey: "is_login"){
         let ph = phoneTF.text!
         let address = addressTF.text!
         if ph.isEmpty && address.isEmpty {
@@ -146,10 +146,14 @@ class CompletePurchaseVC: UIViewController ,GMSMapViewDelegate,FPNTextFieldDeleg
                 try context.save()
                 FTToastIndicator.setToastIndicatorStyle(.dark)
                 FTToastIndicator.showToastMessage("productAddedToCart".localized())
+                self.performSegue(withIdentifier: "CompleteSegue", sender: self)
                 //print("save")
             }catch{
                 print("fail")
             }
+        }
+        }else{
+            self.loginAlert()
         }
     }
     

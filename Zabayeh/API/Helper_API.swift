@@ -252,6 +252,38 @@ class Helper_API:NSObject{
                   
               }
     
+    func getBalance(completion : @escaping(_ code: Int, _ result:JSON?) -> () ){
+           let params = [
+            "user_id":UserDefaults.standard.integer(forKey: "id"),
+           ]
+           Alamofire.request(balanceURL, method: .post, parameters: params, encoding:URLEncoding.default , headers: nil).validate(statusCode: 200..<300).responseJSON { (response) in
+                         switch response.response?.statusCode {
+                         case 200?:
+                             //print("get all cities == \(response.response?.statusCode ?? 0)")
+                             switch response.result{
+                             case .failure( let error):
+                                 print(error)
+                                 completion(response.response?.statusCode ?? 0,nil)
+                             case .success(let value):
+                                 let json = JSON(value)
+                                 let datobj = json
+                                 print(json)
+                                 completion(response.response?.statusCode ?? 0,datobj)
+                             }
+                         default:
+                             print("get balance code  == \(response.response?.statusCode ?? 0)")
+                             if let dat = response.data {
+                                 //print(dat)
+                                 let responseJSON = try? JSON(data: dat)
+                                 print(responseJSON)
+                             }
+                             completion(response.response?.statusCode ?? 0,nil)
+                             
+                         }
+                     }
+                     
+                 }
+    
     func getOrders(status:Int,completion : @escaping(_ code: Int, _ result:[JSON]?) -> () ){
         let headers = [
             "Content-Type":"application/json"

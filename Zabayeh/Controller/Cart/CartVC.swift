@@ -124,8 +124,10 @@ class CartVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     }
     
     @IBAction func orderNowBTN(_ sender: Any) {
-       // self.navigationController?.popViewController(animated: true)
-        self.tabBarController?.selectedIndex = 0
+        let vc = UIStoryboard(name: "Main", bundle: nil)
+        let rootVc = vc.instantiateViewController(withIdentifier: "homeID")
+        self.present(rootVc, animated: true, completion: nil)
+        
     }
     @IBAction func completeBTN(_ sender: Any) {
         var order = [[String:Any]]()
@@ -187,7 +189,7 @@ class CartVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
             print("fail")
         }
     }
-
+    
     @IBAction func returnBTN(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

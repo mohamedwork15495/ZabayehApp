@@ -19,6 +19,26 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,MOLHResetable,UNUserNotificationCenterDelegate ,MessagingDelegate{
     var window: UIWindow?
+  func reset() {
+           let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                  let nav = storyBoard.instantiateViewController(identifier: "homeID")
+                  let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+                  rootviewcontroller.rootViewController = nav
+           if #available(iOS 13.0, *){
+               self.switchRoot()
+           }else{
+               let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+               let stry = UIStoryboard(name: "Main", bundle: nil)
+               rootviewcontroller.rootViewController = stry.instantiateViewController(identifier: "homeID")
+           }
+       }
+    @available(iOS 13.0, *)
+     func switchRoot(){
+         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+         let nav = storyBoard.instantiateViewController(identifier: "homeID")
+         let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+         rootviewcontroller.rootViewController = nav
+     }
     let is_login = UserDefaults.standard.bool(forKey: "is_login")
     // For iOS 9+
     func application(_ application: UIApplication, open url: URL,
@@ -32,11 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,MOLHResetable,UNUserNotif
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSPlacesClient.provideAPIKey("AIzaSyDhauu7VGauXPs9aX41Qw6mcB17iuIW2gI")
         GMSServices.provideAPIKey("AIzaSyDhauu7VGauXPs9aX41Qw6mcB17iuIW2gI")
-        
         MOLHLanguage.setDefaultLanguage("en")
         MOLH.shared.activate(true)
         MOLH.shared.specialKeyWords = ["Cancel","Done"]
-        
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -101,11 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,MOLHResetable,UNUserNotif
         
         completionHandler()
     }
-    func reset() {
-        let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-        let stry = UIStoryboard(name: "Main", bundle: nil)
-        rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "homeID")
-    }
+ 
     
     
     

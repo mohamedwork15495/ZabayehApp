@@ -5,3 +5,34 @@
   Created by endpoint on 5/11/20.
   Copyright © 2020 endPoint. All rights reserved.
 */
+
+"fail" = "حاول مره اخرى";
+"Packagingdish" = "تغليف طبق";
+"Packagingbags" = "تغليف اكياس";
+"Requestsacrificecookedsoggy" = "طلب الذبيحه مطبوخه مندى ";
+//chipping
+"FridgeShredder" = "تقطيع ثلاجه";
+"Hadramicutting" = "تقطيع حضرمى";
+"Cutuplists" = "تقطيع قوائم";
+"Flatcutting" = "تقطيع مفلطح";
+"enterOrderDetails" = "ادخل تفاصيل الطلب";
+"productAddedToCart" = "تم اضافت المنتج الى السله بنجاح";
+"selectAddressOnMap" = "اختر العنوان على الخريطه";
+"enterValidPhoneNumber" = "ادخل رقم جوال صالح";
+"enterPhoneNumber" = "ادخل رقم الجوال";
+"enterphonenumberAndSelectAddressOnMap" = "ادخل رقم الجوال ،قم بتحديد موقعك على الخريطه";
+"tryAgainLater" = "حاول فى وقتا لاحق";
+"enterAllData" = "ادخل جميع البيانات صحيحه";
+"enterName" = "ادخل الاسم";
+"enterPassword" = "ادخل كلمة المرور";
+"enterStrongPassword" = "ادخل كلمة مرور قويه";
+"success" = "تم بنجاح";
+"enterEmail" = "ادخل البريد الالكترونى";
+"enterValidEmail" = "ادخل بريد الالكترونى صالح";
+"entermsg" = "اترك رسالتك";
+"Cancel" = "الغاء";
+"Yes" = "نعم";
+"doYouwantlogout" = "هل تريد تسجيل الخروج حقا؟";
+"loginPlease" = "من فضلك قم بتسجيل الدخول";
+"ok" = "حسنا";
+"Phone_Number" = "ادخل رقم الجوال";

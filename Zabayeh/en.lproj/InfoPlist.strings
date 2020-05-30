@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Zabayeh
+
+  Created by endpoint on 5/29/20.
+  Copyright © 2020 endPoint. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Zabayeh";    //App name as displayed below app icon
+"CFBundleName" = "Zabayeh";  //Short app name, should be 16 characters or less

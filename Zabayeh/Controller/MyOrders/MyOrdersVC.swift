@@ -10,20 +10,26 @@ import UIKit
 import SVProgressHUD
 import FTToastIndicator
 import SwiftyJSON
+import MOLH
 class MyOrdersVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
-    
+    let is_arabic = MOLHLanguage.currentAppleLanguage() == "en" ? "en" : "ar"
+
     let is_login = UserDefaults.standard.bool(forKey: "is_login")
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var orders = [JSON]()
+    override func viewWillAppear(_ animated: Bool) {
+        orders.removeAll()
+        let nib = UINib(nibName: "OrderCell", bundle: nil)
+              tableView.register(nib, forCellReuseIdentifier: "OrderCell")
+              tableView.delegate = self
+              tableView.dataSource = self
+              getOrders(0)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        let nib = UINib(nibName: "OrderCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "OrderCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        getOrders(0)
+      
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 128.0
@@ -40,12 +46,20 @@ class MyOrdersVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
         let dateString = item["created_at"].stringValue
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+       var currency = ""
+        if is_arabic == "en" {
+            currency = Locale.current.currencyCode!
+            dateFormatter.locale = Locale(identifier: "en-us")
+        }else{
+            dateFormatter.locale = Locale(identifier: "ar")
+            currency = Locale.current.localizedString(forCurrencyCode: Locale.current.currencyCode!)!
+        }
         let dateObj = dateFormatter.date(from: dateString)
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         cell.dateLB.text = dateFormatter.string(from: dateObj!)
         cell.logo.setImage(from: imageURL + item["product"]["image"].stringValue)
         cell.titleLB.text = item["product"]["name"].stringValue
-        cell.priceLB.text = "\(item["product"]["price"].intValue)" + " " + Locale.current.currencyCode!
+        cell.priceLB.text = "\(item["order_total"].intValue)" + " " + currency
         return cell
     }
     func getOrders(_ status:Int){

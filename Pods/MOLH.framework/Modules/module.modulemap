@@ -1,0 +1,11 @@
+framework module MOLH {
+  umbrella header "MOLH-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MOLH.Swift {
+    header "MOLH-Swift.h"
+    requires objc
+}
